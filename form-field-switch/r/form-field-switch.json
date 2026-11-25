@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-field-switch",
+  "title": "Switch Form Field",
+  "description": "Switch Form Field integrated with React Hook Form.",
+  "dependencies": [],
+  "registryDependencies": [
+    "form",
+    "switch"
+  ],
+  "files": [
+    {
+      "path": "form-field-switch.tsx",
+      "content": "import {\n    FormControl,\n    FormField,\n    FormItem,\n    FormLabel,\n    FormMessage,\n} from '@/components/ui/form';\nimport { Switch } from '@/components/ui/switch';\nimport { ComponentProps } from 'react';\nimport { Control, FieldPath, FieldValues } from 'react-hook-form';\n\nexport type FormFieldSwitchProps<\n    TFieldValues extends FieldValues,\n    TContext = unknown,\n    TTransformedValues = TFieldValues,\n> = {\n    control: Control<TFieldValues, TContext, TTransformedValues>;\n    name: FieldPath<TFieldValues>;\n    label: string;\n    formItemClassName?: string;\n    required?: boolean;\n    disabled?: boolean;\n} & Omit<ComponentProps<'div'>, 'name'>;\nexport default function FormFieldSwitch<\n    TFieldValues extends FieldValues,\n    TContext = unknown,\n    TTransformedValues = TFieldValues,\n>({\n    control,\n    name,\n    label,\n    formItemClassName = 'flex items-center  gap-4 flex-col',\n    required,\n    disabled = false,\n    ...props\n}: FormFieldSwitchProps<TFieldValues, TContext, TTransformedValues>) {\n    const { ...formItemProps } = props;\n    return (\n        <FormField\n            control={control}\n            name={name}\n            render={({ field, fieldState }) => (\n                <FormItem {...formItemProps} className={formItemClassName}>\n                    <div className=\"flex w-full\">\n                        <FormLabel required={required} className=\"w-20\">\n                            {label}\n                        </FormLabel>\n                        <FormControl>\n                            <Switch\n                                checked={Boolean(field.value)}\n                                onCheckedChange={(checked) =>\n                                    field.onChange(Boolean(checked))\n                                }\n                                aria-invalid={!!fieldState.error}\n                                disabled={disabled}\n                            />\n                        </FormControl>\n                    </div>\n                    <FormMessage className=\"w-full\" />\n                </FormItem>\n            )}\n        />\n    );\n}\n",
+      "type": "registry:component",
+      "target": "@components/form/form-field-switch.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

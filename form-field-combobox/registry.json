@@ -1,0 +1,30 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "form-field-combobox",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
+    "items": [
+        {
+            "name": "form-field-combobox",
+            "type": "registry:component",
+            "title": "Combobox Form Field",
+            "description": "Combobox Form Field integrated with React Hook Form.",
+            "registryDependencies": [
+                "combobox",
+                "form"
+            ],
+            "dependencies": [
+                "lodash-es@^4.18.1"
+            ],
+            "devDependencies": [
+                "@types/lodash-es@^4.17.12"
+            ],
+            "files": [
+                {
+                    "path": "form-field-combobox.tsx",
+                    "type": "registry:component",
+                    "target": "@components/form/form-field-combobox.tsx"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "form-field-switch",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
+    "items": [
+        {
+            "name": "form-field-switch",
+            "type": "registry:component",
+            "title": "Switch Form Field",
+            "description": "Switch Form Field integrated with React Hook Form.",
+            "registryDependencies": [
+                "form",
+                "switch"
+            ],
+            "dependencies": [],
+            "files": [
+                {
+                    "path": "form-field-switch.tsx",
+                    "type": "registry:component",
+                    "target": "@components/form/form-field-switch.tsx"
+                }
+            ]
+        }
+    ]
+}

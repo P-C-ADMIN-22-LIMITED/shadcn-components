@@ -1,0 +1,35 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "form-field-multiselect",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
+    "items": [
+        {
+            "name": "form-field-multiselect",
+            "type": "registry:component",
+            "title": "Multiselect Form Field",
+            "description": "Multiselect Form Field integrated with React Hook Form.",
+            "registryDependencies": [
+                "badge",
+                "button",
+                "command",
+                "form",
+                "popover"
+            ],
+            "dependencies": [
+                "lucide-react@^0.475.0"
+            ],
+            "files": [
+                {
+                    "path": "form-field-multiselect.tsx",
+                    "type": "registry:component",
+                    "target": "@components/form/form-field-multiselect.tsx"
+                },
+                {
+                    "path": "dependencies/ui/multiselect-expandable.tsx",
+                    "type": "registry:ui",
+                    "target": "@ui/multiselect-expandable.tsx"
+                }
+            ]
+        }
+    ]
+}

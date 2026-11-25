@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "name": "form-field-switch",
+    "version": "0.1.0",
+    "description": "Switch Form Field for React Hook Form.",
+    "type": "module",
+    "files": [
+        "form-field-switch.tsx",
+        "registry.json",
+        "r"
+    ],
+    "peerDependencies": {
+        "react": "^19.2.0",
+        "react-hook-form": "^7.90.0"
+    }
+}

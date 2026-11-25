@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-field-textarea",
+  "title": "Textarea Form Field",
+  "description": "Textarea Form Field integrated with React Hook Form.",
+  "dependencies": [],
+  "registryDependencies": [
+    "form",
+    "textarea"
+  ],
+  "files": [
+    {
+      "path": "form-field-textarea/form-field-textarea.tsx",
+      "content": "import {\n    FormControl,\n    FormField,\n    FormItem,\n    FormLabel,\n    FormMessage,\n} from '@/components/ui/form';\nimport { Textarea } from '@/components/ui/textarea';\nimport { ComponentProps } from 'react';\nimport { Control, FieldPath, FieldValues } from 'react-hook-form';\n\nexport type FormFieldTextareaProps<\n    TFieldValues extends FieldValues,\n    TContext = unknown,\n    TTransformedValues = TFieldValues,\n> = {\n    control: Control<TFieldValues, TContext, TTransformedValues>;\n    name: FieldPath<TFieldValues>;\n    label: string;\n    formItemClassName?: string;\n    formItemProps?: Omit<\n        ComponentProps<'div'>,\n        'name' | 'children' | 'className'\n    >;\n    required?: boolean;\n} & Omit<\n    ComponentProps<typeof Textarea>,\n    'name' | 'value' | 'defaultValue' | 'onChange' | 'onBlur' | 'ref'\n>;\n\nexport default function FormFieldTextarea<\n    TFieldValues extends FieldValues,\n    TContext = unknown,\n    TTransformedValues = TFieldValues,\n>({\n    control,\n    name,\n    label,\n    formItemClassName,\n    formItemProps,\n    required,\n    ...textareaProps\n}: FormFieldTextareaProps<TFieldValues, TContext, TTransformedValues>) {\n    return (\n        <FormField\n            control={control}\n            name={name}\n            render={({ field }) => (\n                <FormItem {...formItemProps} className={formItemClassName}>\n                    <FormLabel required={required}>{label}</FormLabel>\n                    <FormControl>\n                        <Textarea\n                            {...textareaProps}\n                            {...field}\n                            value={field.value ?? ''}\n                        />\n                    </FormControl>\n                    <FormMessage />\n                </FormItem>\n            )}\n        />\n    );\n}\n",
+      "type": "registry:component",
+      "target": "@components/form/form-field-textarea.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

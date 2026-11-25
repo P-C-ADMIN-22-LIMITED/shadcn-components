@@ -1,0 +1,18 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "name": "form-field-date-picker",
+    "version": "0.1.0",
+    "description": "Date Picker Form Field for React Hook Form.",
+    "type": "module",
+    "files": [
+        "form-field-date-picker.tsx",
+        "registry.json",
+        "r",
+        "dependencies"
+    ],
+    "peerDependencies": {
+        "react": "^19.2.0",
+        "date-fns": "^4.4.0",
+        "lucide-react": "^0.475.0"
+    }
+}

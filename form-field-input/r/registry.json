@@ -1,0 +1,28 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "form-field-input",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
+    "items": [
+        {
+            "name": "form-field-input",
+            "type": "registry:component",
+            "title": "Input Form Field",
+            "description": "Input Form Field integrated with React Hook Form.",
+            "registryDependencies": [
+                "form",
+                "input",
+                "tooltip"
+            ],
+            "dependencies": [
+                "lucide-react@^0.475.0"
+            ],
+            "files": [
+                {
+                    "path": "form-field-input.tsx",
+                    "type": "registry:component",
+                    "target": "@components/form/form-field-input.tsx"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "name": "form-field-select",
+    "version": "0.1.0",
+    "description": "Select Form Field for React Hook Form.",
+    "type": "module",
+    "files": [
+        "form-field-select.tsx",
+        "registry.json",
+        "r",
+        "dependencies"
+    ],
+    "peerDependencies": {
+        "react": "^19.2.0",
+        "react-hook-form": "^7.90.0",
+        "lucide-react": "^0.475.0"
+    }
+}

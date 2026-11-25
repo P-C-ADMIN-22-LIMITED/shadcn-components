@@ -1,0 +1,35 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "form-field-date-picker",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
+    "items": [
+        {
+            "name": "form-field-date-picker",
+            "type": "registry:component",
+            "title": "Date Picker Form Field",
+            "description": "Date Picker Form Field integrated with React Hook Form.",
+            "registryDependencies": [
+                "button",
+                "calendar",
+                "input",
+                "popover"
+            ],
+            "dependencies": [
+                "date-fns@^4.4.0",
+                "lucide-react@^0.475.0"
+            ],
+            "files": [
+                {
+                    "path": "form-field-date-picker.tsx",
+                    "type": "registry:component",
+                    "target": "@components/form/form-field-date-picker.tsx"
+                },
+                {
+                    "path": "dependencies/hooks/use-synced-draft.ts",
+                    "type": "registry:hook",
+                    "target": "@hooks/use-synced-draft.ts"
+                }
+            ]
+        }
+    ]
+}

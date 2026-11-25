@@ -1,8 +1,22 @@
 {
     "$schema": "https://ui.shadcn.com/schema/registry.json",
-    "name": "custom-components",
-    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/laravel-react-crm-starter-kit",
+    "name": "shadcn-components",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
     "include": [
-        "form-field-async-select/registry.json"
+        "form-field-async-select/registry.json",
+        "form-field-checkbox/registry.json",
+        "form-field-combobox/registry.json",
+        "form-field-date-input/registry.json",
+        "form-field-date-picker/registry.json",
+        "form-field-infinite-scroll-select/registry.json",
+        "form-field-input/registry.json",
+        "form-field-multiselect/registry.json",
+        "form-field-pill-input/registry.json",
+        "form-field-search-select/registry.json",
+        "form-field-select/registry.json",
+        "form-field-switch/registry.json",
+        "form-field-tag-input/registry.json",
+        "form-field-textarea/registry.json",
+        "form-field-tinymce/registry.json"
     ]
 }

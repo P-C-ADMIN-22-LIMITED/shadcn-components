@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-field-checkbox",
+  "title": "Checkbox Form Field",
+  "description": "Checkbox Form Field integrated with React Hook Form.",
+  "dependencies": [],
+  "registryDependencies": [
+    "checkbox",
+    "form"
+  ],
+  "files": [
+    {
+      "path": "form-field-checkbox.tsx",
+      "content": "import { Checkbox } from '@/components/ui/checkbox';\nimport {\n    FormControl,\n    FormField,\n    FormItem,\n    FormLabel,\n    FormMessage,\n} from '@/components/ui/form';\nimport { cn } from '@/lib/utils';\nimport { ComponentProps } from 'react';\nimport { Control, FieldPath, FieldValues } from 'react-hook-form';\n\nexport type FormFieldCheckboxProps<\n    TFieldValues extends FieldValues,\n    TContext = unknown,\n    TTransformedValues = TFieldValues,\n> = {\n    control: Control<TFieldValues, TContext, TTransformedValues>;\n    name: FieldPath<TFieldValues>;\n    label: string;\n    formItemClassName?: string;\n    labelDirection?: 'left' | 'right';\n    onCheckedChange?: (checked: boolean) => void;\n} & Omit<ComponentProps<'div'>, 'name'>;\n\nexport default function FormFieldCheckbox<\n    TFieldValues extends FieldValues,\n    TContext = unknown,\n    TTransformedValues = TFieldValues,\n>({\n    control,\n    name,\n    label,\n    formItemClassName,\n    labelDirection = 'right',\n    onCheckedChange,\n    ...props\n}: FormFieldCheckboxProps<TFieldValues, TContext, TTransformedValues>) {\n    const { ...formItemProps } = props;\n\n    return (\n        <FormField\n            control={control}\n            name={name}\n            render={({ field }) => (\n                <FormItem\n                    {...formItemProps}\n                    className={cn('flex items-center gap-3', formItemClassName)}\n                >\n                    {labelDirection === 'left' && (\n                        <FormLabel>{label}</FormLabel>\n                    )}\n                    <FormControl>\n                        <Checkbox\n                            checked={field.value}\n                            onCheckedChange={(checked) => {\n                                const nextChecked = checked === true;\n                                field.onChange(nextChecked);\n                                onCheckedChange?.(nextChecked);\n                            }}\n                        />\n                    </FormControl>\n                    {labelDirection === 'right' && (\n                        <FormLabel>{label}</FormLabel>\n                    )}\n                    <FormMessage />\n                </FormItem>\n            )}\n        />\n    );\n}\n",
+      "type": "registry:component",
+      "target": "@components/form/form-field-checkbox.tsx"
+    }
+  ],
+  "type": "registry:component"
+}

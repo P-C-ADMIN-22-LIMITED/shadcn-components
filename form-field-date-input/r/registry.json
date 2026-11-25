@@ -1,0 +1,31 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "form-field-date-input",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
+    "items": [
+        {
+            "name": "form-field-date-input",
+            "type": "registry:component",
+            "title": "Date Input Form Field",
+            "description": "Date Input Form Field integrated with React Hook Form.",
+            "registryDependencies": [
+                "button",
+                "calendar",
+                "form",
+                "input",
+                "popover"
+            ],
+            "dependencies": [
+                "date-fns@^4.4.0",
+                "lucide-react@^0.475.0"
+            ],
+            "files": [
+                {
+                    "path": "form-field-date-input.tsx",
+                    "type": "registry:component",
+                    "target": "@components/form/form-field-date-input.tsx"
+                }
+            ]
+        }
+    ]
+}

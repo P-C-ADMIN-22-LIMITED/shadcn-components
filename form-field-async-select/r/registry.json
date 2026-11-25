@@ -1,7 +1,7 @@
 {
     "$schema": "https://ui.shadcn.com/schema/registry.json",
     "name": "form-field-async-select",
-    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/laravel-react-crm-starter-kit",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
     "items": [
         {
             "name": "form-field-async-select",

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "form-field-textarea",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
+    "items": [
+        {
+            "name": "form-field-textarea",
+            "type": "registry:component",
+            "title": "Textarea Form Field",
+            "description": "Textarea Form Field integrated with React Hook Form.",
+            "registryDependencies": [
+                "form",
+                "textarea"
+            ],
+            "dependencies": [],
+            "files": [
+                {
+                    "path": "form-field-textarea.tsx",
+                    "type": "registry:component",
+                    "target": "@components/form/form-field-textarea.tsx"
+                }
+            ]
+        }
+    ]
+}

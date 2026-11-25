@@ -1,0 +1,28 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "form-field-tag-input",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
+    "items": [
+        {
+            "name": "form-field-tag-input",
+            "type": "registry:component",
+            "title": "Tag Input Form Field",
+            "description": "Tag Input Form Field integrated with React Hook Form.",
+            "registryDependencies": [
+                "badge",
+                "form",
+                "input"
+            ],
+            "dependencies": [
+                "lucide-react@^0.475.0"
+            ],
+            "files": [
+                {
+                    "path": "form-field-tag-input.tsx",
+                    "type": "registry:component",
+                    "target": "@components/form/form-field-tag-input.tsx"
+                }
+            ]
+        }
+    ]
+}

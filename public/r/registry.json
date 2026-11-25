@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "custom-components",
-  "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/laravel-react-crm-starter-kit",
+  "name": "shadcn-components",
+  "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
   "items": [
     {
       "name": "form-field-async-select",
@@ -25,6 +25,341 @@
           "path": "form-field-async-select/form-field-async-select.tsx",
           "type": "registry:component",
           "target": "@components/form/form-field-async-select.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-checkbox",
+      "title": "Checkbox Form Field",
+      "description": "Checkbox Form Field integrated with React Hook Form.",
+      "dependencies": [],
+      "registryDependencies": [
+        "checkbox",
+        "form"
+      ],
+      "files": [
+        {
+          "path": "form-field-checkbox/form-field-checkbox.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-checkbox.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-combobox",
+      "title": "Combobox Form Field",
+      "description": "Combobox Form Field integrated with React Hook Form.",
+      "dependencies": [
+        "lodash-es@^4.18.1"
+      ],
+      "devDependencies": [
+        "@types/lodash-es@^4.17.12"
+      ],
+      "registryDependencies": [
+        "combobox",
+        "form"
+      ],
+      "files": [
+        {
+          "path": "form-field-combobox/form-field-combobox.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-combobox.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-date-input",
+      "title": "Date Input Form Field",
+      "description": "Date Input Form Field integrated with React Hook Form.",
+      "dependencies": [
+        "date-fns@^4.4.0",
+        "lucide-react@^0.475.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "calendar",
+        "form",
+        "input",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "form-field-date-input/form-field-date-input.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-date-input.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-date-picker",
+      "title": "Date Picker Form Field",
+      "description": "Date Picker Form Field integrated with React Hook Form.",
+      "dependencies": [
+        "date-fns@^4.4.0",
+        "lucide-react@^0.475.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "calendar",
+        "input",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "form-field-date-picker/form-field-date-picker.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-date-picker.tsx"
+        },
+        {
+          "path": "form-field-date-picker/dependencies/hooks/use-synced-draft.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-synced-draft.ts"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-infinite-scroll-select",
+      "title": "Infinite Scroll Select Form Field",
+      "description": "Infinite Scroll Select Form Field integrated with React Hook Form.",
+      "dependencies": [
+        "@inertiajs/react@^3.0.0",
+        "lodash-es@^4.18.1"
+      ],
+      "devDependencies": [
+        "@types/lodash-es@^4.17.12"
+      ],
+      "registryDependencies": [
+        "form",
+        "select",
+        "skeleton",
+        "spinner"
+      ],
+      "files": [
+        {
+          "path": "form-field-infinite-scroll-select/form-field-infinite-scroll-select.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-infinite-scroll-select.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-input",
+      "title": "Input Form Field",
+      "description": "Input Form Field integrated with React Hook Form.",
+      "dependencies": [
+        "lucide-react@^0.475.0"
+      ],
+      "registryDependencies": [
+        "form",
+        "input",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "form-field-input/form-field-input.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-input.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-multiselect",
+      "title": "Multiselect Form Field",
+      "description": "Multiselect Form Field integrated with React Hook Form.",
+      "dependencies": [
+        "lucide-react@^0.475.0"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "command",
+        "form",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "form-field-multiselect/form-field-multiselect.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-multiselect.tsx"
+        },
+        {
+          "path": "form-field-multiselect/dependencies/ui/multiselect-expandable.tsx",
+          "type": "registry:ui",
+          "target": "@ui/multiselect-expandable.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-pill-input",
+      "title": "Pill Input Form Field",
+      "description": "Pill Input Form Field integrated with React Hook Form.",
+      "dependencies": [
+        "lucide-react@^0.475.0"
+      ],
+      "registryDependencies": [
+        "badge",
+        "form",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "form-field-pill-input/form-field-pill-input.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-pill-input.tsx"
+        },
+        {
+          "path": "form-field-pill-input/dependencies/ui/pill-input.tsx",
+          "type": "registry:ui",
+          "target": "@ui/pill-input.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-search-select",
+      "title": "Search Select Form Field",
+      "description": "Search Select Form Field integrated with React Hook Form.",
+      "dependencies": [
+        "lodash-es@^4.18.1",
+        "lucide-react@^0.475.0",
+        "radix-ui@^1.6.7"
+      ],
+      "devDependencies": [
+        "@types/lodash-es@^4.17.12"
+      ],
+      "registryDependencies": [
+        "command",
+        "form",
+        "input",
+        "popover",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "form-field-search-select/form-field-search-select.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-search-select.tsx"
+        },
+        {
+          "path": "form-field-search-select/dependencies/ui/searchable-select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/searchable-select.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-select",
+      "title": "Select Form Field",
+      "description": "Select Form Field integrated with React Hook Form.",
+      "dependencies": [
+        "lucide-react@^0.475.0"
+      ],
+      "registryDependencies": [
+        "button",
+        "command",
+        "form",
+        "popover",
+        "select"
+      ],
+      "files": [
+        {
+          "path": "form-field-select/form-field-select.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-select.tsx"
+        },
+        {
+          "path": "form-field-select/dependencies/ui/searchable-select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/searchable-select.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-switch",
+      "title": "Switch Form Field",
+      "description": "Switch Form Field integrated with React Hook Form.",
+      "dependencies": [],
+      "registryDependencies": [
+        "form",
+        "switch"
+      ],
+      "files": [
+        {
+          "path": "form-field-switch/form-field-switch.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-switch.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-tag-input",
+      "title": "Tag Input Form Field",
+      "description": "Tag Input Form Field integrated with React Hook Form.",
+      "dependencies": [
+        "lucide-react@^0.475.0"
+      ],
+      "registryDependencies": [
+        "badge",
+        "form",
+        "input"
+      ],
+      "files": [
+        {
+          "path": "form-field-tag-input/form-field-tag-input.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-tag-input.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-textarea",
+      "title": "Textarea Form Field",
+      "description": "Textarea Form Field integrated with React Hook Form.",
+      "dependencies": [],
+      "registryDependencies": [
+        "form",
+        "textarea"
+      ],
+      "files": [
+        {
+          "path": "form-field-textarea/form-field-textarea.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-textarea.tsx"
+        }
+      ],
+      "type": "registry:component"
+    },
+    {
+      "name": "form-field-tinymce",
+      "title": "TinyMCE Form Field",
+      "description": "TinyMCE Form Field integrated with React Hook Form.",
+      "dependencies": [
+        "lucide-react@^0.475.0",
+        "sonner@^2.0.0",
+        "@tinymce/tinymce-react"
+      ],
+      "registryDependencies": [
+        "form",
+        "input",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "form-field-tinymce/form-field-tinymce.tsx",
+          "type": "registry:component",
+          "target": "@components/form/form-field-tinymce.tsx"
         }
       ],
       "type": "registry:component"

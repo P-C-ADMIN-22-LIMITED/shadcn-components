@@ -1,0 +1,40 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "form-field-search-select",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
+    "items": [
+        {
+            "name": "form-field-search-select",
+            "type": "registry:component",
+            "title": "Search Select Form Field",
+            "description": "Search Select Form Field integrated with React Hook Form.",
+            "registryDependencies": [
+                "command",
+                "form",
+                "input",
+                "popover",
+                "select"
+            ],
+            "dependencies": [
+                "lodash-es@^4.18.1",
+                "lucide-react@^0.475.0",
+                "radix-ui@^1.6.7"
+            ],
+            "devDependencies": [
+                "@types/lodash-es@^4.17.12"
+            ],
+            "files": [
+                {
+                    "path": "form-field-search-select.tsx",
+                    "type": "registry:component",
+                    "target": "@components/form/form-field-search-select.tsx"
+                },
+                {
+                    "path": "dependencies/ui/searchable-select.tsx",
+                    "type": "registry:ui",
+                    "target": "@ui/searchable-select.tsx"
+                }
+            ]
+        }
+    ]
+}

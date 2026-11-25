@@ -1,0 +1,23 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "name": "form-field-search-select",
+    "version": "0.1.0",
+    "description": "Search Select Form Field for React Hook Form.",
+    "type": "module",
+    "files": [
+        "form-field-search-select.tsx",
+        "registry.json",
+        "r",
+        "dependencies"
+    ],
+    "peerDependencies": {
+        "react": "^19.2.0",
+        "react-hook-form": "^7.90.0",
+        "lodash-es": "^4.18.1",
+        "lucide-react": "^0.475.0",
+        "radix-ui": "^1.6.7"
+    },
+    "devDependencies": {
+        "@types/lodash-es": "^4.17.12"
+    }
+}

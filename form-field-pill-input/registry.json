@@ -1,0 +1,33 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "form-field-pill-input",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
+    "items": [
+        {
+            "name": "form-field-pill-input",
+            "type": "registry:component",
+            "title": "Pill Input Form Field",
+            "description": "Pill Input Form Field integrated with React Hook Form.",
+            "registryDependencies": [
+                "badge",
+                "form",
+                "input"
+            ],
+            "dependencies": [
+                "lucide-react@^0.475.0"
+            ],
+            "files": [
+                {
+                    "path": "form-field-pill-input.tsx",
+                    "type": "registry:component",
+                    "target": "@components/form/form-field-pill-input.tsx"
+                },
+                {
+                    "path": "dependencies/ui/pill-input.tsx",
+                    "type": "registry:ui",
+                    "target": "@ui/pill-input.tsx"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "name": "form-field-date-input",
+    "version": "0.1.0",
+    "description": "Date Input Form Field for React Hook Form.",
+    "type": "module",
+    "files": [
+        "form-field-date-input.tsx",
+        "registry.json",
+        "r"
+    ],
+    "peerDependencies": {
+        "react": "^19.2.0",
+        "react-hook-form": "^7.90.0",
+        "date-fns": "^4.4.0",
+        "lucide-react": "^0.475.0"
+    }
+}

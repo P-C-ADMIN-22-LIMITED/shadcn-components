@@ -1,0 +1,25 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "form-field-checkbox",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
+    "items": [
+        {
+            "name": "form-field-checkbox",
+            "type": "registry:component",
+            "title": "Checkbox Form Field",
+            "description": "Checkbox Form Field integrated with React Hook Form.",
+            "registryDependencies": [
+                "checkbox",
+                "form"
+            ],
+            "dependencies": [],
+            "files": [
+                {
+                    "path": "form-field-checkbox.tsx",
+                    "type": "registry:component",
+                    "target": "@components/form/form-field-checkbox.tsx"
+                }
+            ]
+        }
+    ]
+}

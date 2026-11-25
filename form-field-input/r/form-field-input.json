@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-field-input",
+  "title": "Input Form Field",
+  "description": "Input Form Field integrated with React Hook Form.",
+  "dependencies": [
+    "lucide-react@^0.475.0"
+  ],
+  "registryDependencies": [
+    "form",
+    "input",
+    "tooltip"
+  ],
+  "files": [
+    {
+      "path": "form-field-input.tsx",
+      "content": "import {\n    FormControl,\n    FormField,\n    FormItem,\n    FormLabel,\n    FormMessage,\n} from '@/components/ui/form';\nimport { Input } from '@/components/ui/input';\nimport {\n    Tooltip,\n    TooltipContent,\n    TooltipTrigger,\n} from '@/components/ui/tooltip';\nimport { InfoIcon } from 'lucide-react';\nimport { ComponentProps } from 'react';\nimport { Control, FieldPath, FieldValues } from 'react-hook-form';\n\nexport type FormFieldInputProps<\n    TFieldValues extends FieldValues,\n    TContext = unknown,\n    TTransformedValues = TFieldValues,\n> = {\n    control: Control<TFieldValues, TContext, TTransformedValues>;\n    name: FieldPath<TFieldValues>;\n    label: string;\n    formItemClassName?: string;\n    formItemProps?: Omit<\n        ComponentProps<'div'>,\n        'name' | 'children' | 'className'\n    >;\n    required?: boolean;\n    hint?: string;\n} & Omit<\n    ComponentProps<typeof Input>,\n    'name' | 'value' | 'defaultValue' | 'onChange' | 'onBlur' | 'ref'\n>;\n\nexport default function FormFieldInput<\n    TFieldValues extends FieldValues,\n    TContext = unknown,\n    TTransformedValues = TFieldValues,\n>({\n    control,\n    name,\n    label,\n    formItemClassName,\n    formItemProps,\n    required,\n    hint,\n    ...inputProps\n}: FormFieldInputProps<TFieldValues, TContext, TTransformedValues>) {\n    return (\n        <FormField\n            control={control}\n            name={name}\n            render={({ field }) => (\n                <FormItem {...formItemProps} className={formItemClassName}>\n                    {hint ? (\n                        <div className=\"flex items-center gap-1.5\">\n                            <FormLabel required={required}>{label}</FormLabel>\n                            <Tooltip>\n                                <TooltipTrigger asChild>\n                                    <button\n                                        type=\"button\"\n                                        aria-label={hint}\n                                        className=\"text-muted-foreground transition-colors hover:text-foreground\"\n                                    >\n                                        <InfoIcon className=\"size-3.5\" />\n                                    </button>\n                                </TooltipTrigger>\n                                <TooltipContent>\n                                    <p>{hint}</p>\n                                </TooltipContent>\n                            </Tooltip>\n                        </div>\n                    ) : (\n                        <FormLabel required={required}>{label}</FormLabel>\n                    )}\n                    <FormControl>\n                        <Input\n                            {...inputProps}\n                            {...field}\n                            value={field.value ?? ''}\n                        />\n                    </FormControl>\n                    <FormMessage />\n                </FormItem>\n            )}\n        />\n    );\n}\n",
+      "type": "registry:component",
+      "target": "@components/form/form-field-input.tsx"
+    }
+  ],
+  "type": "registry:component"
+}
