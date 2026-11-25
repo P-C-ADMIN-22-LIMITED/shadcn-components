@@ -363,6 +363,210 @@
         }
       ],
       "type": "registry:component"
+    },
+    {
+      "name": "table-core",
+      "title": "Table Core",
+      "description": "Data table core with sorting, pagination, filtering, row selection, drag-and-drop, column visibility, and virtualization.",
+      "dependencies": [
+        "@dnd-kit/core@^6.3.1",
+        "@dnd-kit/sortable@^10.0.0",
+        "@dnd-kit/utilities@^3.2.2",
+        "@inertiajs/react@^3.0.0",
+        "@tanstack/react-table@^8.21.3",
+        "date-fns@^4.4.0",
+        "lodash-es@^4.18.1",
+        "lucide-react@^0.475.0",
+        "react-day-picker@^10.0.2",
+        "vaul@^1.1.2"
+      ],
+      "registryDependencies": [
+        "alert-dialog",
+        "badge",
+        "button",
+        "calendar",
+        "checkbox",
+        "command",
+        "dialog",
+        "drawer",
+        "dropdown-menu",
+        "empty",
+        "input",
+        "label",
+        "popover",
+        "select",
+        "separator",
+        "table",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "table-core/table-core.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/table-core.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/draggable-table-body.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/draggable-table-body.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/draggable-table-provider.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/draggable-table-provider.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/empty-table.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/empty-table.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/filter-calendar.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/filter-calendar.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/filter-chips.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/filter-chips.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/filter-date-range.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/filter-date-range.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/filter-editor.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/filter-editor.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/filter-input.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/filter-input.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/filter-multiselect.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/filter-multiselect.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/filter-panel.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/filter-panel.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/filter-popover.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/filter-popover.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/filter-searchable.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/filter-searchable.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/filter-select.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/filter-select.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/filter-sheet.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/filter-sheet.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/filter-status.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/filter-status.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/table-filters.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/filters/table-filters.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/table-filters.utils.ts",
+          "type": "registry:lib",
+          "target": "@components/data-table/filters/table-filters.utils.ts"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/filters/types.ts",
+          "type": "registry:file",
+          "target": "@components/data-table/filters/types.ts"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/table-actions.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/table-actions.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/table-bulk-actions.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/table-bulk-actions.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/table-pagination.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/table-pagination.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/table-search-input.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/table-search-input.tsx"
+        },
+        {
+          "path": "table-core/dependencies/components/data-table/table-view-columns.tsx",
+          "type": "registry:component",
+          "target": "@components/data-table/table-view-columns.tsx"
+        },
+        {
+          "path": "table-core/dependencies/hooks/data-table/use-table-query-state.ts",
+          "type": "registry:hook",
+          "target": "@hooks/data-table/use-table-query-state.ts"
+        },
+        {
+          "path": "table-core/dependencies/hooks/data-table/use-virtual-rows.ts",
+          "type": "registry:hook",
+          "target": "@hooks/data-table/use-virtual-rows.ts"
+        },
+        {
+          "path": "table-core/dependencies/hooks/use-mobile.tsx",
+          "type": "registry:hook",
+          "target": "@hooks/use-mobile.tsx"
+        },
+        {
+          "path": "table-core/dependencies/hooks/use-synced-draft.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-synced-draft.ts"
+        },
+        {
+          "path": "table-core/dependencies/hooks/use-translations.ts",
+          "type": "registry:hook",
+          "target": "@hooks/use-translations.ts"
+        },
+        {
+          "path": "table-core/dependencies/types/resource/links.ts",
+          "type": "registry:file",
+          "target": "@/types/resource/links.ts"
+        },
+        {
+          "path": "table-core/dependencies/types/resource/meta.ts",
+          "type": "registry:file",
+          "target": "@/types/resource/meta.ts"
+        },
+        {
+          "path": "table-core/dependencies/ui/multiselect-expandable.tsx",
+          "type": "registry:ui",
+          "target": "@ui/multiselect-expandable.tsx"
+        },
+        {
+          "path": "table-core/dependencies/ui/searchable-select.tsx",
+          "type": "registry:ui",
+          "target": "@ui/searchable-select.tsx"
+        }
+      ],
+      "type": "registry:component"
     }
   ]
 }

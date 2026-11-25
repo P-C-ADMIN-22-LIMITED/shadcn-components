@@ -37,6 +37,7 @@ The CLI copies the component source into the project and installs its declared s
 | `form-field-tag-input` | Tag selection and creation field. | `pnpm dlx shadcn@latest add P-C-ADMIN-22-LIMITED/shadcn-components/form-field-tag-input` |
 | `form-field-textarea` | React Hook Form textarea field. | `pnpm dlx shadcn@latest add P-C-ADMIN-22-LIMITED/shadcn-components/form-field-textarea` |
 | `form-field-tinymce` | TinyMCE rich-text editor field. | `pnpm dlx shadcn@latest add P-C-ADMIN-22-LIMITED/shadcn-components/form-field-tinymce` |
+| `table-core` | Data table with sorting, filtering, pagination, selection, drag-and-drop, column visibility, and virtualization. | `pnpm dlx shadcn@latest add P-C-ADMIN-22-LIMITED/shadcn-components/table-core` |
 
 ## Usage
 
@@ -51,3 +52,4 @@ import FormFieldInput from '@/components/form/form-field-input';
 - `types.ts` is not distributed as a separate component because it is a shared type module.
 - The multiselect, pill-input, searchable-select, and date-picker packages include their custom local helper files automatically.
 - `form-field-tinymce` also expects the consuming application to provide its media library and upload hook integration.
+- `table-core` includes its data-table subcomponents, related hooks, resource link/meta types, and custom select helpers.

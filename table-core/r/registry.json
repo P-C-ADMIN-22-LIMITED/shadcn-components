@@ -1,0 +1,211 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "table-core",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/shadcn-components",
+    "items": [
+        {
+            "name": "table-core",
+            "type": "registry:component",
+            "title": "Table Core",
+            "description": "Data table core with sorting, pagination, filtering, row selection, drag-and-drop, column visibility, and virtualization.",
+            "registryDependencies": [
+                "alert-dialog",
+                "badge",
+                "button",
+                "calendar",
+                "checkbox",
+                "command",
+                "dialog",
+                "drawer",
+                "dropdown-menu",
+                "empty",
+                "input",
+                "label",
+                "popover",
+                "select",
+                "separator",
+                "table",
+                "tooltip"
+            ],
+            "dependencies": [
+                "@dnd-kit/core@^6.3.1",
+                "@dnd-kit/sortable@^10.0.0",
+                "@dnd-kit/utilities@^3.2.2",
+                "@inertiajs/react@^3.0.0",
+                "@tanstack/react-table@^8.21.3",
+                "date-fns@^4.4.0",
+                "lodash-es@^4.18.1",
+                    "lucide-react@^0.475.0",
+                "react-day-picker@^10.0.2",
+                "vaul@^1.1.2"
+            ],
+            "files": [
+                {
+                    "path": "table-core.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/table-core.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/draggable-table-body.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/draggable-table-body.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/draggable-table-provider.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/draggable-table-provider.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/empty-table.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/empty-table.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/filter-calendar.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/filter-calendar.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/filter-chips.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/filter-chips.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/filter-date-range.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/filter-date-range.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/filter-editor.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/filter-editor.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/filter-input.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/filter-input.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/filter-multiselect.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/filter-multiselect.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/filter-panel.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/filter-panel.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/filter-popover.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/filter-popover.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/filter-searchable.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/filter-searchable.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/filter-select.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/filter-select.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/filter-sheet.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/filter-sheet.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/filter-status.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/filter-status.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/table-filters.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/filters/table-filters.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/table-filters.utils.ts",
+                    "type": "registry:lib",
+                    "target": "@components/data-table/filters/table-filters.utils.ts"
+                },
+                {
+                    "path": "dependencies/components/data-table/filters/types.ts",
+                    "type": "registry:file",
+                    "target": "@components/data-table/filters/types.ts"
+                },
+                {
+                    "path": "dependencies/components/data-table/table-actions.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/table-actions.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/table-bulk-actions.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/table-bulk-actions.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/table-pagination.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/table-pagination.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/table-search-input.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/table-search-input.tsx"
+                },
+                {
+                    "path": "dependencies/components/data-table/table-view-columns.tsx",
+                    "type": "registry:component",
+                    "target": "@components/data-table/table-view-columns.tsx"
+                },
+                {
+                    "path": "dependencies/hooks/data-table/use-table-query-state.ts",
+                    "type": "registry:hook",
+                    "target": "@hooks/data-table/use-table-query-state.ts"
+                },
+                {
+                    "path": "dependencies/hooks/data-table/use-virtual-rows.ts",
+                    "type": "registry:hook",
+                    "target": "@hooks/data-table/use-virtual-rows.ts"
+                },
+                {
+                    "path": "dependencies/hooks/use-mobile.tsx",
+                    "type": "registry:hook",
+                    "target": "@hooks/use-mobile.tsx"
+                },
+                {
+                    "path": "dependencies/hooks/use-synced-draft.ts",
+                    "type": "registry:hook",
+                    "target": "@hooks/use-synced-draft.ts"
+                },
+                {
+                    "path": "dependencies/hooks/use-translations.ts",
+                    "type": "registry:hook",
+                    "target": "@hooks/use-translations.ts"
+                },
+                {
+                    "path": "dependencies/types/resource/links.ts",
+                    "type": "registry:file",
+                    "target": "@/types/resource/links.ts"
+                },
+                {
+                    "path": "dependencies/types/resource/meta.ts",
+                    "type": "registry:file",
+                    "target": "@/types/resource/meta.ts"
+                },
+                {
+                    "path": "dependencies/ui/multiselect-expandable.tsx",
+                    "type": "registry:ui",
+                    "target": "@ui/multiselect-expandable.tsx"
+                },
+                {
+                    "path": "dependencies/ui/searchable-select.tsx",
+                    "type": "registry:ui",
+                    "target": "@ui/searchable-select.tsx"
+                }
+            ]
+        }
+    ]
+}

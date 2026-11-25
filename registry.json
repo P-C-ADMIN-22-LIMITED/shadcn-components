@@ -17,6 +17,7 @@
         "form-field-switch/registry.json",
         "form-field-tag-input/registry.json",
         "form-field-textarea/registry.json",
-        "form-field-tinymce/registry.json"
+        "form-field-tinymce/registry.json",
+        "table-core/registry.json"
     ]
 }
