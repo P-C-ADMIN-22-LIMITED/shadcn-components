@@ -1,0 +1,33 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "form-field-async-select",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/laravel-react-crm-starter-kit",
+    "items": [
+        {
+            "name": "form-field-async-select",
+            "type": "registry:component",
+            "title": "Async Select Form Field",
+            "description": "A searchable, paginated select field for React Hook Form.",
+            "registryDependencies": [
+                "form",
+                "command",
+                "popover",
+                "spinner"
+            ],
+            "dependencies": [
+                "lodash-es@^4.18.1",
+                "lucide-react@^0.475.0"
+            ],
+            "devDependencies": [
+                "@types/lodash-es@^4.17.12"
+            ],
+            "files": [
+                {
+                    "path": "form-field-async-select.tsx",
+                    "type": "registry:component",
+                    "target": "@components/form/form-field-async-select.tsx"
+                }
+            ]
+        }
+    ]
+}

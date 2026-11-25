@@ -1,0 +1,8 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "custom-components",
+    "homepage": "https://github.com/P-C-ADMIN-22-LIMITED/laravel-react-crm-starter-kit",
+    "include": [
+        "form-field-async-select/registry.json"
+    ]
+}
