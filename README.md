@@ -18,6 +18,30 @@ pnpm dlx shadcn@latest add P-C-ADMIN-22-LIMITED/shadcn-components/<component-nam
 
 The CLI copies the component source into the project and installs its declared shadcn and npm dependencies.
 
+## Updating an installed component
+
+Running `add` again does not overwrite existing files by default. Files that already exist in the project are skipped, so local changes are protected.
+
+Preview the changes before updating:
+
+```bash
+pnpm dlx shadcn@latest add P-C-ADMIN-22-LIMITED/shadcn-components/<component-name> --dry-run
+```
+
+Review the source differences:
+
+```bash
+pnpm dlx shadcn@latest add P-C-ADMIN-22-LIMITED/shadcn-components/<component-name> --diff
+```
+
+To intentionally replace existing files with the registry version, use `--overwrite`:
+
+```bash
+pnpm dlx shadcn@latest add P-C-ADMIN-22-LIMITED/shadcn-components/<component-name> --overwrite
+```
+
+Use `--overwrite` carefully because it replaces local edits to the component files.
+
 ## Available components
 
 | Component | Description | Install command |
@@ -51,5 +75,5 @@ import FormFieldInput from '@/components/form/form-field-input';
 
 - `types.ts` is not distributed as a separate component because it is a shared type module.
 - The multiselect, pill-input, searchable-select, and date-picker packages include their custom local helper files automatically.
-- `form-field-tinymce` also expects the consuming application to provide its media library and upload hook integration.
+- `form-field-tinymce` does not upload images; its optional media-picker integration accepts URL strings or objects with `original_url`/`url` fields.
 - `table-core` includes its data-table subcomponents, related hooks, resource link/meta types, and custom select helpers.

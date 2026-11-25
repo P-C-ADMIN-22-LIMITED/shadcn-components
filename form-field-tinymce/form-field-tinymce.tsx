@@ -11,14 +11,11 @@ import {
     TooltipContent,
     TooltipTrigger,
 } from '@/components/ui/tooltip';
-import type { MediaItem } from '@/components/media-library';
 import { InfoIcon } from 'lucide-react';
 import { ComponentProps, useCallback, useRef } from 'react';
 import { Control, FieldPath, FieldValues } from 'react-hook-form';
-import { useUploadsFile } from '@/hooks/use-uploads-files';
 import { Editor } from '@tinymce/tinymce-react';
 import { InitOptions } from '@tinymce/tinymce-react/lib/cjs/main/ts/components/Editor';
-import { toast } from 'sonner';
 
 export type FormFieldEditor<
     TFieldValues extends FieldValues,
@@ -41,9 +38,17 @@ export type FormFieldEditor<
     'name' | 'value' | 'defaultValue' | 'onChange' | 'onBlur' | 'ref'
 >;
 
+export type MediaPickerSelection = Array<
+    | string
+    | {
+          original_url?: string | null;
+          url?: string | null;
+      }
+>;
+
 export type MediaPickerOpenRequest = {
     multiselect: boolean;
-    onMediaSelected: (selection: MediaItem[] | null) => void;
+    onMediaSelected: (selection: MediaPickerSelection | null) => void;
 };
 
 export type MediaPickerOpenHandler = (
@@ -122,8 +127,6 @@ export default function FormFieldTinyMce<
         ): void;
     };
 
-    const { uploadMedia } = useUploadsFile();
-
     const isPasting = useRef(false);
 
     const openMediaPicker = useCallback(
@@ -135,7 +138,15 @@ export default function FormFieldTinyMce<
                 multiselect,
                 onMediaSelected: (selection) => {
                     const urls =
-                        selection?.map((media) => media.original_url) ?? [];
+                        selection?.flatMap((item) => {
+                            if (typeof item === 'string') {
+                                return [item];
+                            }
+
+                            const url = item.original_url ?? item.url;
+
+                            return url ? [url] : [];
+                        }) ?? [];
 
                     if (urls.length > 0) {
                         onSelected(urls);
@@ -348,20 +359,6 @@ export default function FormFieldTinyMce<
                 });
             });
 
-            const uploadMediaForEditor = (file: File) => {
-                uploadMedia(file, 'uploads')
-                    .then((json) => {
-                        const url = json.data.url;
-                        editor.insertContent(
-                            `<p><img src="${url}" alt="" /></p>`,
-                        );
-                    })
-                    .catch((error) => {
-                        console.error(error);
-                        toast.error('Κάτι πήγε στραβά!');
-                    });
-            };
-
             editor.ui.registry.addMenuItem('custompaste', {
                 text: 'Paste',
                 icon: 'paste',
@@ -509,82 +506,6 @@ export default function FormFieldTinyMce<
                         'br',
                     ]);
 
-                    const uploadMediaUrl = async (
-                        file: File,
-                    ): Promise<string | null> => {
-                        try {
-                            const json = await uploadMedia(file, 'uploads');
-                            return json?.data?.url || null;
-                        } catch (err) {
-                            console.error('upload failed', err);
-                            toast.error('Κάτι πήγε στραβά!');
-
-                            return null;
-                        }
-                    };
-
-                    async function srcToFile(
-                        src: string,
-                    ): Promise<File | null> {
-                        try {
-                            if (src.startsWith('data:')) {
-                                const res = await fetch(src);
-                                const blob = await res.blob();
-                                const mime = blob.type || 'image/png';
-                                let extension = '';
-                                if (mime === 'image/jpeg') {
-                                    extension = '.jpg';
-                                } else if (mime === 'image/png') {
-                                    extension = '.png';
-                                } else {
-                                    const parts = mime.split('/');
-                                    extension = parts[1]
-                                        ? `.${parts[1].split(';')[0]}`
-                                        : '';
-                                }
-                                return new File(
-                                    [blob],
-                                    `pasted-image${extension}`,
-                                    { type: mime },
-                                );
-                            } else {
-                                const res = await fetch(src, { mode: 'cors' });
-                                if (!res.ok) {
-                                    return null;
-                                }
-                                const contentType =
-                                    res.headers.get('content-type') || '';
-                                if (!contentType.startsWith('image/')) {
-                                    return null;
-                                }
-                                const blob = await res.blob();
-                                let extension = '';
-                                if (contentType.includes('jpeg')) {
-                                    extension = '.jpg';
-                                } else if (contentType.includes('png')) {
-                                    extension = '.png';
-                                } else {
-                                    const parts = contentType.split('/');
-                                    extension = parts[1]
-                                        ? `.${parts[1].split(';')[0]}`
-                                        : '';
-                                }
-                                return new File(
-                                    [blob],
-                                    `pasted-image${extension}`,
-                                    { type: contentType },
-                                );
-                            }
-                        } catch (e) {
-                            console.warn(
-                                'failed to convert src to file',
-                                src,
-                                e,
-                            );
-                            return null;
-                        }
-                    }
-
                     async function processNode(
                         node: Node,
                     ): Promise<Node | null> {
@@ -629,23 +550,7 @@ export default function FormFieldTinyMce<
                         }
 
                         if (tag === 'img') {
-                            const src = el.getAttribute('src') || '';
-                            const alt = el.getAttribute('alt') || '';
-                            if (!src) {
-                                return null;
-                            }
-
-                            const imgEl = document.createElement('img');
-                            imgEl.setAttribute('alt', alt);
-
-                            const file = await srcToFile(src);
-                            if (file) {
-                                const uploadedUrl = await uploadMediaUrl(file);
-                                if (uploadedUrl) {
-                                    imgEl.setAttribute('src', uploadedUrl);
-                                }
-                            }
-                            return imgEl;
+                            return null;
                         }
 
                         if (tag === 'iframe') {
@@ -764,19 +669,6 @@ export default function FormFieldTinyMce<
 
             editor.addShortcut('Meta+V', 'Custom Paste', async () => {
                 await doCustomPaste();
-            });
-
-            editor.on('drop', (event) => {
-                const dragEvent = event as unknown as DragEvent;
-                const dt = dragEvent.dataTransfer;
-                if (!dt || !dt.files || dt.files.length === 0) return;
-                const files = Array.from(dt.files).filter((file) =>
-                    file.type.startsWith('image/'),
-                );
-                files.forEach((file) => {
-                    dragEvent.preventDefault();
-                    uploadMediaForEditor(file);
-                });
             });
 
             editor.on('input change undo redo', syncCarouselImages);

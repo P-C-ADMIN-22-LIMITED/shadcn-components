@@ -347,7 +347,6 @@
       "description": "TinyMCE Form Field integrated with React Hook Form.",
       "dependencies": [
         "lucide-react@^0.475.0",
-        "sonner@^2.0.0",
         "@tinymce/tinymce-react"
       ],
       "registryDependencies": [
